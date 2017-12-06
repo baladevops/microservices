@@ -19,24 +19,11 @@ import com.infy.ms.rest.model.Forecast;
 @EnableAutoConfiguration
 public class ForecastMsController {
 	
-	private boolean stub = true;
 	
 	@RequestMapping("/forecast/{city}")
 	@ResponseBody
-	Forecast getForecast(@PathVariable String city) {
-		
-		if(stub){
-			return getStubForecastData(city);
-		}
-
-		RestTemplate restTemplate = new RestTemplate();
-
-		System.out.println(" restTemplate :::" + restTemplate);
-		Forecast forecast = restTemplate.getForObject(
-				"http://api.openweathermap.org/data/2.5/forecast?q=" + city
-						+ "&units=Metric", Forecast.class);
-
-		return forecast;
+	Forecast getForecast(@PathVariable String city) {		
+		return getStubForecastData(city);
 	}
 
 	@RequestMapping("/forecast")
@@ -45,19 +32,8 @@ public class ForecastMsController {
 		// default to Pune
 		String city = "Pune";
 		
-		if(stub){
-			return getStubForecastData(city);
-		}
+		return getStubForecastData(city);
 		
-
-		RestTemplate restTemplate = new RestTemplate();
-
-		System.out.println(" restTemplate :::" + restTemplate);
-		Forecast weather = restTemplate.getForObject(
-				"http://api.openweathermap.org/data/2.5/forecast?q=" + city
-						+ "&units=Metric", Forecast.class);
-
-		return weather;
 	}
 	
 	private Forecast getStubForecastData(String city){
@@ -81,7 +57,4 @@ public class ForecastMsController {
 		return forecast;
 	}
 	
-	
-	
-
 }

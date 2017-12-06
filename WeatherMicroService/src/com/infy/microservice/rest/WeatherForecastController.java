@@ -20,26 +20,11 @@ import com.infy.model.Weather;
 @EnableAutoConfiguration
 public class WeatherForecastController {
 	
-	@Value("${spring.application.stub}")
-	private boolean stub;
-
 	@RequestMapping("/weather/{city}")
 	@ResponseBody
 	Weather getWeather(@PathVariable String city) {
 		
-		System.out.println("stub ---->"+stub);
-		if(!stub){
-			RestTemplate restTemplate = new RestTemplate();
-
-			System.out.println(" restTemplate :::" + restTemplate);
-			Weather weather = restTemplate.getForObject(
-					"http://api.openweathermap.org/data/2.5/weather?q=" + city
-							+ "&units=Metric", Weather.class);
-
-			return weather;
-		}else {
-			return getStubWeatherData(city);
-		}
+		return getStubWeatherData(city);
 		
 	}
 
@@ -48,18 +33,7 @@ public class WeatherForecastController {
 	Weather getWeather() {
 		// default to Pune
 		String city = "Pune";
-		if(stub){
-			return getStubWeatherData(city);
-		}
-
-		RestTemplate restTemplate = new RestTemplate();
-
-		System.out.println(" restTemplate :::" + restTemplate);
-		Weather weather = restTemplate.getForObject(
-				"http://api.openweathermap.org/data/2.5/weather?q=" + city
-						+ "&units=Metric", Weather.class);
-
-		return weather;
+		return getStubWeatherData(city);
 	}
 	
 	private Weather getStubWeatherData(String city){
@@ -83,5 +57,4 @@ public class WeatherForecastController {
 		return weather;
 	}
 	
-
 }
