@@ -1,0 +1,14 @@
+# DO NOT ADD THESE FILES TO REPOSITORY
+*target*
+*.jar
+*.war
+*.class
+
+# Files used by eclipse on developer's system
+.project
+.metadata
+bin/**
+tmp/**
+.classpath
+.settings/
+
