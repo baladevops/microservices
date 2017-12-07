@@ -8,7 +8,7 @@
 	<parent>
 		<groupId>org.springframework.boot </groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>1.2.5.RELEASE</version>
+		<version>1.5.6.RELEASE</version>
 	</parent>
 	
 	<dependencyManagement>
@@ -16,7 +16,7 @@
 	        <dependency>
 	            <groupId>org.springframework.cloud</groupId>
 	            <artifactId>spring-cloud-netflix</artifactId>
-	            <version>1.0.3.RELEASE</version>
+	            <version>1.4.0.RELEASE</version>
 	            <type>pom</type>
 	            <scope>import</scope>
 	        </dependency>
@@ -35,7 +35,6 @@
     </dependency>
     
     
-
 	</dependencies>
 
 	<build>
@@ -44,7 +43,6 @@
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
-                <version>1.2.5.RELEASE</version>
                 <configuration>
 			        <mainClass>com.infy.ms.rest.fc.ForecastMsApplication</mainClass>
 			        <layout>ZIP</layout>

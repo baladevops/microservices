@@ -6,12 +6,10 @@
 	<packaging>jar</packaging>
 	<version>1.0</version>
 
-
-
 	<parent>
 		<groupId>org.springframework.boot </groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>1.2.5.RELEASE</version>
+		<version>1.5.6.RELEASE</version>
 	</parent>
 
 	<dependencyManagement>
@@ -19,7 +17,7 @@
 			<dependency>
 				<groupId>org.springframework.cloud</groupId>
 				<artifactId>spring-cloud-netflix</artifactId>
-				<version>1.0.3.RELEASE</version>
+				<version>1.4.0.RELEASE</version>
 				<type>pom</type>
 				<scope>import</scope>
 			</dependency>
@@ -35,7 +33,6 @@
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-starter-turbine-amqp</artifactId>
-			<version>1.0.0.RELEASE</version>
 		</dependency>	
 		<!--
 		This two below dependency added for 
@@ -55,18 +52,15 @@
 		<dependency>
 			<groupId>com.netflix.servo</groupId>
 			<artifactId>servo-core</artifactId>
-			<version>0.7.4</version>
-		</dependency>
+			</dependency>
 		<dependency>
 			<groupId>com.netflix.archaius</groupId>
 			<artifactId>archaius-core</artifactId>
-			<version>0.6.5</version>
-		</dependency>
+			</dependency>
 		<dependency>
 			<groupId>commons-configuration</groupId>
 			<artifactId>commons-configuration</artifactId>
-			<version>1.8</version>
-		</dependency>
+			</dependency>
 		<dependency>
 			<groupId>commons-lang</groupId>
 			<artifactId>commons-lang</artifactId>
@@ -75,12 +69,10 @@
 		<dependency>
 			<groupId>org.apache.httpcomponents</groupId>
 			<artifactId>httpclient</artifactId>
-			<version>4.3.6</version>
 		</dependency>
 		<dependency>
 			<groupId>org.apache.httpcomponents</groupId>
 			<artifactId>httpcore</artifactId>
-			<version>4.3.3</version>
 		</dependency>
 		
 		<!-- End missing dependency -->
@@ -93,7 +85,6 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
-				<version>1.2.5.RELEASE</version>
 				<configuration>
 					<mainClass>com.infy.microservice.support.TurbineServerApp</mainClass>
 					<layout>ZIP</layout>

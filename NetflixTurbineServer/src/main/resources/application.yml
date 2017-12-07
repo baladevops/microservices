@@ -1,7 +1,6 @@
 info:
   component: Turbine MS - To Montior Microservice
 
-PREFIX:
   
 endpoints:
   restart:
