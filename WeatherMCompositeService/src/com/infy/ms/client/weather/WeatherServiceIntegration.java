@@ -15,13 +15,11 @@ import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 @Component("integration")
 public class WeatherServiceIntegration {
 	
-
 	@Autowired
 	private LoadBalancerClient loadBalancer;
 	
 	RestTemplate restTemplate = new RestTemplate();	
 
-	
 	@HystrixCommand(fallbackMethod = "defaultForecast")
 	public Forecast getForecast(String city) {
 		URI furi = getServiceUrl("forecastms", null);
@@ -76,7 +74,6 @@ public class WeatherServiceIntegration {
 					.println("Failed to resolve serviceId '{}'. Fallback to URL '{}'."
 							+ serviceId + " " + uri);
 		}
-
 		return uri;
 	}
 

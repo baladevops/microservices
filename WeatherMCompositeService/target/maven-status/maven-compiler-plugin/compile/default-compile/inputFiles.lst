@@ -1,0 +1,9 @@
+/home/mahendra/Desktop/batch-prep/mydemos/microservices/WeatherMCompositeService/src/com/infy/ms/client/weather/WeatherServiceClientApplication.java
+/home/mahendra/Desktop/batch-prep/mydemos/microservices/WeatherMCompositeService/src/com/infy/ms/client/model/Temperature.java
+/home/mahendra/Desktop/batch-prep/mydemos/microservices/WeatherMCompositeService/src/com/infy/ms/client/weather/WeatherServiceIntegration.java
+/home/mahendra/Desktop/batch-prep/mydemos/microservices/WeatherMCompositeService/src/com/infy/ms/client/model/ForecastDetails.java
+/home/mahendra/Desktop/batch-prep/mydemos/microservices/WeatherMCompositeService/src/com/infy/ms/client/model/FWeather.java
+/home/mahendra/Desktop/batch-prep/mydemos/microservices/WeatherMCompositeService/src/com/infy/ms/client/model/Weather.java
+/home/mahendra/Desktop/batch-prep/mydemos/microservices/WeatherMCompositeService/src/com/infy/ms/client/model/Forecast.java
+/home/mahendra/Desktop/batch-prep/mydemos/microservices/WeatherMCompositeService/src/com/infy/ms/client/model/WeatherAggregated.java
+/home/mahendra/Desktop/batch-prep/mydemos/microservices/WeatherMCompositeService/src/com/infy/ms/client/weather/WeatherServiceClient.java

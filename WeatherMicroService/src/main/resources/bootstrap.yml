@@ -1,6 +1,6 @@
 spring:
   application:
     name: weatherms
-    stub: true
-  
+  # Signup at http://openweathermap.org/ to get your OWN API KEY
+    appId: {Your API Key}
       

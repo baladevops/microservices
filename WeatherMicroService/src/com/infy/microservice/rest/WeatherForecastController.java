@@ -20,26 +20,14 @@ import com.infy.model.Weather;
 @EnableAutoConfiguration
 public class WeatherForecastController {
 	
-	@Value("${spring.application.stub}")
-	private boolean stub;
+	@Value("${spring.application.appId}")
+	private String appId;
 
 	@RequestMapping("/weather/{city}")
 	@ResponseBody
 	Weather getWeather(@PathVariable String city) {
-		
-		System.out.println("stub ---->"+stub);
-		if(!stub){
-			RestTemplate restTemplate = new RestTemplate();
-
-			System.out.println(" restTemplate :::" + restTemplate);
-			Weather weather = restTemplate.getForObject(
-					"http://api.openweathermap.org/data/2.5/weather?q=" + city
-							+ "&units=Metric", Weather.class);
-
-			return weather;
-		}else {
-			return getStubWeatherData(city);
-		}
+		//You may choose to validate CITY here...
+		return weatherFor(city);
 		
 	}
 
@@ -48,40 +36,24 @@ public class WeatherForecastController {
 	Weather getWeather() {
 		// default to Pune
 		String city = "Pune";
-		if(stub){
-			return getStubWeatherData(city);
-		}
+		return weatherFor(city);
+	}
 
+	/**
+	 * Private method to invoke third party REST services
+	 * @param city
+	 * @return WeatherForecast object
+	 */
+	private Weather weatherFor(String city){
 		RestTemplate restTemplate = new RestTemplate();
 
 		System.out.println(" restTemplate :::" + restTemplate);
+		System.out.println("Using APPID:"+appId);
 		Weather weather = restTemplate.getForObject(
 				"http://api.openweathermap.org/data/2.5/weather?q=" + city
-						+ "&units=Metric", Weather.class);
+						+ "&units=Metric&APPID="+appId, Weather.class);
 
 		return weather;
 	}
 	
-	private Weather getStubWeatherData(String city){
-		String mockFile = "/data/weather_"+city.toLowerCase()+".json";
-		ObjectMapper objectMapper = new ObjectMapper();
-		Weather weather = null;
-		try {
-			InputStream stream = getClass().getResourceAsStream(mockFile);
-			weather = objectMapper.readValue(stream, Weather.class);
-		} catch (JsonParseException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (JsonMappingException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		
-		return weather;
-	}
-	
-
 }

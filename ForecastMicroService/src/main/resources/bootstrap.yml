@@ -1,4 +1,7 @@
 spring:
   application:
     name: forecastms
+  # Signup at http://openweathermap.org/ to get your OWN API KEY
+    appId: {Your API Key}
+ 
  
